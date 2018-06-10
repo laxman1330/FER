@@ -6,13 +6,13 @@ import cv2
 import pickle
 
 
-from LBP1 import lbp_cal
+from LBP import lbp_cal
 from Viola_Jones import find_face
 
 class_lb=[]
 hist_data=[]
 i=0
-for x in range(1,3):
+for x in range(1,41):
 	path = "att_faces/training/s"+str(x)+"/"
 	imagesList = listdir(path)
 	#l=np.size(imagesList)
@@ -28,7 +28,7 @@ for x in range(1,3):
 			continue
 		img = cv2.resize(img, (72,72))
 		#print(img.shape)
-		#img=img[25:225,25:225] 
+		#img=img[0:72,5:67] 
 		#loadedImages.append(img)
 		#cv2.namedWindow('image', cv2.WINDOW_NORMAL)
 		#cv2.imshow('image',img) # for show image
@@ -37,7 +37,7 @@ for x in range(1,3):
 		hist=lbp_cal(img)
 		hist_data.append(hist)
 		class_lb.append(x)
-		#print(hist_data[i], class_lb[i])
+		#print(hist_data[i],np.size(hist_data[i]), class_lb[i])
 		#print(class_lb[i])
 		i=i+1
 

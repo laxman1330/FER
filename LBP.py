@@ -10,6 +10,7 @@ def lbp_cal(loadedImages):
 	numPoints = 8*radius
 # compute the Local Binary Pattern representation		
 	lbp = feature.local_binary_pattern(loadedImages,numPoints,radius, method="uniform")
+
 	#cv2.namedWindow('image', cv2.WINDOW_NORMAL) #for create new windewo name as "image"
 	#cv2.imshow('image',lbp) # for show image 
 	#cv2.waitKey(0) # for waiting 0 is for infinte time 
@@ -20,5 +21,5 @@ def lbp_cal(loadedImages):
 	#cv2.destroyWindow('image')
 	hist=np.histogram(lbp.ravel(),bins=np.arange(0,numPoints + 3),range=(0, numPoints + 2))
 	hist = hist[0].astype("float")
-	#print(hist)
+	print(hist)
 	return hist

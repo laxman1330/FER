@@ -30,7 +30,7 @@ for x in range(1,41):
 		else:
 			continue
 		img = cv2.resize(img, (72,72))
-		#img=img[25:225,25:225] 
+		#img=img[0:72,5:67] 
 		#loadedImages.append(img)
 		#cv2.namedWindow('image', cv2.WINDOW_NORMAL)
 		#cv2.imshow('image',img) # for show image
